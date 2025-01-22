@@ -2,11 +2,11 @@ services:
   app:
     build: ./
     volumes:
-      - ./public:/var/www
+      - ./src:/var/www
   nginx:
     image: nginx:1.19-alpine
     ports:
       - 8020:80
     volumes:
-      - ./public:/var/www
+      - ./src:/var/www
       - ./nginx:/etc/nginx/conf.d
